@@ -1,7 +1,7 @@
 {
-	"name": "completed",
+	"name": "starter",
 	"private": true,
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -10,7 +10,7 @@
 		"preview": "vite preview"
 	},
 	"engines": {
-		"node": ">=20.9"
+		"node": ">=20"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.11.1",

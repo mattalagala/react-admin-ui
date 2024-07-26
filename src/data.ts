@@ -746,8 +746,8 @@ export const wellRows = [
 		platform: "Thunder Horse",
 		field: "Mississippi Canyon",
 		block: "777",
-		type: "production",
-		status: "active",
+		type: "Production",
+		status: "Active",
 	},
 	{
 		id: 2,
@@ -757,8 +757,8 @@ export const wellRows = [
 		platform: "Thunder Horse",
 		field: "Mississippi Canyon",
 		block: "777",
-		type: "production",
-		status: "active",
+		type: "Production",
+		status: "Active",
 	},
 	{
 		id: 3,
@@ -768,8 +768,8 @@ export const wellRows = [
 		platform: "Thunder Horse",
 		field: "Mississippi Canyon",
 		block: "778",
-		type: "injection",
-		status: "active",
+		type: "Injection",
+		status: "Active",
 	},
 	{
 		id: 4,
@@ -779,7 +779,7 @@ export const wellRows = [
 		platform: "Thunder Horse",
 		field: "Mississippi Canyon",
 		block: "778",
-		type: "injection",
-		status: "active",
+		type: "Injection",
+		status: "Active",
 	},
 ];

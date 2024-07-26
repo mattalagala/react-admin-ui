@@ -3,7 +3,7 @@ import DataTable from "../../components/dataTable/DataTable";
 import "./wells.scss";
 import { useState } from "react";
 import Add from "../../components/add/Add";
-import { userRows } from "../../data";
+import { wellRows } from "../../data";
 //import { useQuery } from "@tanstack/react-query";
 
 const columns: GridColDef[] = [
@@ -47,7 +47,7 @@ const columns: GridColDef[] = [
 	{
 		field: "block",
 		headerName: "Block",
-		width: 200,
+		width: 150,
 		type: "string",
 	},
 	{
@@ -83,7 +83,7 @@ const Wells = () => {
 				<h1>Wells</h1>
 				<button onClick={() => setOpen(true)}>Add New Wells</button>
 			</div>
-			<DataTable slug="users" columns={columns} rows={userRows} />
+			<DataTable slug="users" columns={columns} rows={wellRows} />
 			{/* TEST THE API */}
 
 			{/* {isLoading ? (

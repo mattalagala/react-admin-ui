@@ -32,7 +32,6 @@ jobs:
           api_location: "" # Api source code path - optional
           is_static_export: true
           output_location: "/dist" # Built app content directory - optional
-          skip_api_build: true
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:

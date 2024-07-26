@@ -24,6 +24,18 @@ export const menu = [
 		],
 	},
 	{
+		id: 6,
+		title: "assets",
+		listItems: [
+			{
+				id: 1,
+				title: "Wells",
+				url: "/wells",
+				icon: "user.svg",
+			},
+		],
+	},
+	{
 		id: 2,
 		title: "lists",
 		listItems: [
@@ -47,9 +59,9 @@ export const menu = [
 			},
 			{
 				id: 4,
-				title: "Posts",
+				title: "Reports",
 				url: "/posts",
-				icon: "post2.svg",
+				icon: "post.svg",
 			},
 		],
 	},
@@ -642,6 +654,7 @@ export const singleUser = {
 		},
 	],
 };
+
 export const singleProduct = {
 	id: 1,
 	title: "Playstation 5 Digital Edition",
@@ -723,3 +736,50 @@ export const singleProduct = {
 		},
 	],
 };
+
+export const wellRows = [
+	{
+		id: 1,
+		img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+		operator: "BP",
+		wellName: "BPE1",
+		platform: "Thunder Horse",
+		field: "Mississippi Canyon",
+		block: "777",
+		type: "production",
+		status: "active",
+	},
+	{
+		id: 2,
+		img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+		operator: "BP",
+		wellName: "BPE2",
+		platform: "Thunder Horse",
+		field: "Mississippi Canyon",
+		block: "777",
+		type: "production",
+		status: "active",
+	},
+	{
+		id: 3,
+		img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+		operator: "BP",
+		wellName: "BPE3",
+		platform: "Thunder Horse",
+		field: "Mississippi Canyon",
+		block: "778",
+		type: "injection",
+		status: "active",
+	},
+	{
+		id: 4,
+		img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+		operator: "BP",
+		wellName: "BPE1",
+		platform: "Thunder Horse",
+		field: "Mississippi Canyon",
+		block: "778",
+		type: "injection",
+		status: "active",
+	},
+];

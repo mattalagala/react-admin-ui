@@ -59,7 +59,7 @@ const columns: GridColDef[] = [
 	{
 		field: "status",
 		headerName: "Status",
-		width: 150,
+		width: 151,
 		type: "string",
 	},
 ];

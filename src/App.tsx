@@ -1,7 +1,10 @@
 import Home from "./pages/home/Home";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Users from "./pages/users/Users";
+import Platforms from "./pages/platforms/Platforms";
+import Reports from "./pages/reports/Reports";
 import Wells from "./pages/wells/Wells";
+import Forms from "./pages/forms/Forms";
 import Products from "./pages/products/Products";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -62,6 +65,18 @@ function App() {
 				{
 					path: "/wells",
 					element: <Wells />,
+				},
+				{
+					path: "/forms",
+					element: <Forms />,
+				},
+				{
+					path: "/platforms",
+					element: <Platforms />,
+				},
+				{
+					path: "/platforms/reports",
+					element: <Reports />,
 				},
 			],
 		},

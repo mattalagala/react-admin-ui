@@ -56,7 +56,6 @@ const columns: GridColDef[] = [
 ];
 
 const Reports = () => {
-	const [open, setOpen] = useState(false);
 	const navigate = useNavigate();
 
 	const params = useParams();
@@ -64,8 +63,7 @@ const Reports = () => {
 	const targetId = parseInt(id); // Convert to number if IDs are numeric
 
 	const handleButtonClick = () => {
-		// Perform any other logic you need on click
-		setOpen(true); // Your existing logic
+		// Perform any other logic you need on
 		navigate(`/reports/${targetId}/form`); // Navigate to the new page
 	};
 
@@ -95,7 +93,6 @@ const Reports = () => {
       ) : (
         <DataTable slug="products" columns={columns} rows={data} />
       )} */}
-			{/* {open && <Add slug="product" columns={columns} setOpen={setOpen} />} */}
 		</div>
 	);
 };

@@ -88,12 +88,6 @@ export const menu = [
 				icon: "note.svg",
 			},
 			{
-				id: 3,
-				title: "Forms",
-				url: "/forms",
-				icon: "form.svg",
-			},
-			{
 				id: 4,
 				title: "Calendar",
 				url: "/",

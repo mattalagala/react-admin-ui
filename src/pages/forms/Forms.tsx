@@ -1,4 +1,3 @@
-import ChartBox from "../../components/chartBox/ChartBox";
 import PlatformBox from "../../components/platformBox/PlatformBox";
 
 import { chartBoxUser } from "../../data";

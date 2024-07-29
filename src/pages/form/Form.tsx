@@ -1,8 +1,4 @@
-import BarChartBox from "../../components/barChartBox/BarChartBox";
-import BigChartBox from "../../components/bigChartBox/BigChartBox";
-import ChartBox from "../../components/chartBox/ChartBox";
-import PieChartBox from "../../components/pieCartBox/PieChartBox";
-import TopBox from "../../components/topBox/TopBox";
+import { useFormik } from "formik";
 import {
 	barChartBoxRevenue,
 	barChartBoxVisit,
@@ -14,6 +10,17 @@ import {
 import "./form.scss";
 
 const Form = () => {
+	// Pass the useFormik() hook initial form values and a submit function that will
+	// be called when the form is submitted
+	const formik = useFormik({
+		initialValues: {
+			email: "",
+		},
+		onSubmit: (values) => {
+			alert(JSON.stringify(values, null, 2));
+		},
+	});
+
 	return (
 		<div className="form">
 			{/* <div className="box box1">
@@ -43,6 +50,18 @@ const Form = () => {
       <div className="box box9">
         <BarChartBox {...barChartBoxRevenue} />
       </div> */}
+			<form onSubmit={formik.handleSubmit}>
+				<label htmlFor="email">Email Address</label>
+				<input
+					id="email"
+					name="email"
+					type="email"
+					onChange={formik.handleChange}
+					value={formik.values.email}
+				/>
+
+				<button type="submit">Submit</button>
+			</form>
 		</div>
 	);
 };

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./reports.scss";
 import DataTable from "../../components/dataTable/DataTable";
-import Add from "../../components/add/Add";
 import { GridColDef } from "@mui/x-data-grid";
 import { products } from "../../data";
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const columns: GridColDef[] = [
 	{ field: "id", headerName: "ID", width: 90 },
@@ -19,7 +21,7 @@ const columns: GridColDef[] = [
 		field: "title",
 		type: "string",
 		headerName: "Title",
-		width: 250,
+		width: 150,
 	},
 	{
 		field: "color",
@@ -31,18 +33,18 @@ const columns: GridColDef[] = [
 		field: "price",
 		type: "string",
 		headerName: "Price",
-		width: 200,
+		width: 150,
 	},
 	{
 		field: "producer",
 		headerName: "Producer",
 		type: "string",
-		width: 200,
+		width: 150,
 	},
 	{
 		field: "createdAt",
 		headerName: "Created At",
-		width: 200,
+		width: 100,
 		type: "string",
 	},
 	{
@@ -55,6 +57,17 @@ const columns: GridColDef[] = [
 
 const Reports = () => {
 	const [open, setOpen] = useState(false);
+	const navigate = useNavigate();
+
+	const params = useParams();
+	const id = params.id as string; // Cast directly if necessary
+	const targetId = parseInt(id); // Convert to number if IDs are numeric
+
+	const handleButtonClick = () => {
+		// Perform any other logic you need on click
+		setOpen(true); // Your existing logic
+		navigate(`/reports/${targetId}/form`); // Navigate to the new page
+	};
 
 	// TEST THE API
 
@@ -67,12 +80,14 @@ const Reports = () => {
 	// });
 
 	return (
-		<div className="products">
+		<div className="reports">
 			<div className="info">
-				<h1>Products</h1>
-				<button onClick={() => setOpen(true)}>Add New Products</button>
+				<h1>Reports</h1>
+				<Button variant="contained" onClick={handleButtonClick}>
+					Add New
+				</Button>
 			</div>
-			<DataTable slug="products" columns={columns} rows={products} />
+			<DataTable slug="reports" columns={columns} rows={products} />
 			{/* TEST THE API */}
 
 			{/* {isLoading ? (
@@ -80,7 +95,7 @@ const Reports = () => {
       ) : (
         <DataTable slug="products" columns={columns} rows={data} />
       )} */}
-			{open && <Add slug="product" columns={columns} setOpen={setOpen} />}
+			{/* {open && <Add slug="product" columns={columns} setOpen={setOpen} />} */}
 		</div>
 	);
 };

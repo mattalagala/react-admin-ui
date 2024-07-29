@@ -5,6 +5,7 @@ import Platforms from "./pages/platforms/Platforms";
 import Reports from "./pages/reports/Reports";
 import Wells from "./pages/wells/Wells";
 import Forms from "./pages/forms/Forms";
+import Form from "./pages/form/Form";
 import Products from "./pages/products/Products";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -75,8 +76,12 @@ function App() {
 					element: <Platforms />,
 				},
 				{
-					path: "/platforms/reports",
+					path: "/reports/:id",
 					element: <Reports />,
+				},
+				{
+					path: "/reports/:id/form",
+					element: <Form />,
 				},
 			],
 		},

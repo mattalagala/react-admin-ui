@@ -1,12 +1,5 @@
 import { useFormik } from "formik";
-import {
-	barChartBoxRevenue,
-	barChartBoxVisit,
-	chartBoxConversion,
-	chartBoxProduct,
-	chartBoxRevenue,
-	chartBoxUser,
-} from "../../data";
+
 import "./form.scss";
 
 const Form = () => {

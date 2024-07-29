@@ -192,6 +192,7 @@ export const topDealUsers = [
 ];
 
 export const chartBoxUser = {
+	id: 1,
 	color: "#8884d8",
 	icon: "/userIcon.svg",
 	title: "Total Users",

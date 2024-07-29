@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./reports.scss";
 import DataTable from "../../components/dataTable/DataTable";
 import { GridColDef } from "@mui/x-data-grid";

@@ -4,7 +4,7 @@ import Users from "./pages/users/Users";
 import Platforms from "./pages/platforms/Platforms";
 import Reports from "./pages/reports/Reports";
 import Wells from "./pages/wells/Wells";
-import Form from "./pages/form/Form";
+import Report from "./pages/report/Report";
 import Products from "./pages/products/Products";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -71,12 +71,12 @@ function App() {
 					element: <Platforms />,
 				},
 				{
-					path: "/reports/:id",
+					path: "/platforms/:id/reports",
 					element: <Reports />,
 				},
 				{
-					path: "/reports/:id/form",
-					element: <Form />,
+					path: "/platforms/:id/report",
+					element: <Report />,
 				},
 			],
 		},

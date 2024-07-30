@@ -63,7 +63,7 @@ const Reports = () => {
 
 	const handleButtonClick = () => {
 		// Perform any other logic you need on
-		navigate(`/reports/${targetId}/form`); // Navigate to the new page
+		navigate(`/platforms/${targetId}/report`); // Navigate to the new page
 	};
 
 	// TEST THE API

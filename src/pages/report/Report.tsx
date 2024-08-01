@@ -31,9 +31,9 @@ const Report = () => {
 	});
 
 	return (
-		<div className="report-parent">
-			<h1 className="header">Add New Report</h1>
-			<div className="report">
+		<div className="info">
+			<h1>Add New Report</h1>
+			<div className="box">
 				<form onSubmit={formik.handleSubmit}>
 					<div>
 						<label htmlFor="username">Username:</label>

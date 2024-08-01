@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import "./report.scss";
-import { Typography } from "@mui/material";
 
 const Report = () => {
 	// useFormik hook sets up the form state and provides helpful functions

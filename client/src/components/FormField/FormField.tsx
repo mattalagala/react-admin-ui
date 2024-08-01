@@ -8,8 +8,8 @@ import {
 	YAxis,
 } from "recharts";
 import "./single.scss";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
 
 type Props = {
 	id: number;
@@ -24,29 +24,29 @@ type Props = {
 };
 
 // useFormik hook sets up the form state and provides helpful functions
-const formik = useFormik({
-	initialValues: {
-		username: "",
-		email: "",
-		password: "",
-	},
-	// Validation rules defined using Yup
-	validationSchema: Yup.object().shape({
-		username: Yup.string()
-			.required("Username is required")
-			.min(3, "Username must be at least 3 characters")
-			.max(15, "Username must be at most 15 characters"),
-		email: Yup.string()
-			.email("Invalid email address")
-			.required("Email is required"),
-		password: Yup.string().required("Password is required"),
-	}),
-	// onSubmit is called when the form is submitted
-	onSubmit: (values) => {
-		// Handle form submission logic here (e.g., send data to server)
-		console.log(values);
-	},
-});
+// const formik = useFormik({
+// 	initialValues: {
+// 		username: "",
+// 		email: "",
+// 		password: "",
+// 	},
+// 	// Validation rules defined using Yup
+// 	validationSchema: Yup.object().shape({
+// 		username: Yup.string()
+// 			.required("Username is required")
+// 			.min(3, "Username must be at least 3 characters")
+// 			.max(15, "Username must be at most 15 characters"),
+// 		email: Yup.string()
+// 			.email("Invalid email address")
+// 			.required("Email is required"),
+// 		password: Yup.string().required("Password is required"),
+// 	}),
+// 	// onSubmit is called when the form is submitted
+// 	onSubmit: (values) => {
+// 		// Handle form submission logic here (e.g., send data to server)
+// 		console.log(values);
+// 	},
+// });
 
 const FormField = (props: Props) => {
 	return (

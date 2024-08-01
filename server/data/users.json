@@ -1,0 +1,72 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"img": "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+			"lastName": "Hubbard",
+			"firstName": "Eula",
+			"email": "hubbard@gmail.com",
+			"phone": "423 452 729",
+			"createdAt": "05.07.2023",
+			"verified": true
+		},
+		{
+			"id": 2,
+			"img": "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=1600",
+			"lastName": "Manning",
+			"firstName": "Stella",
+			"email": "manning@gmail.com",
+			"phone": "422 426 715",
+			"createdAt": "03.07.2023",
+			"verified": true
+		},
+		{
+			"id": 3,
+			"img": "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=1600",
+			"lastName": "Greer",
+			"firstName": "Mary",
+			"email": "greer@hottmail.com",
+			"phone": "563 632 325",
+			"createdAt": "02.07.2023",
+			"verified": true
+		},
+		{
+			"id": 4,
+			"img": "https://images.pexels.com/photos/871495/pexels-photo-871495.jpeg?auto=compress&cs=tinysrgb&w=1600",
+			"lastName": "Williamson",
+			"firstName": "Mildred",
+			"email": "williamson@gmail.com",
+			"phone": "534 522 125",
+			"createdAt": "12.06.2023",
+			"verified": true
+		},
+		{
+			"id": 5,
+			"img": "https://images.pexels.com/photos/1758144/pexels-photo-1758144.jpeg?auto=compress&cs=tinysrgb&w=1600",
+			"lastName": "Gross",
+			"firstName": "Jose",
+			"email": "gobtagbes@yahoo.com",
+			"phone": "462 252 624",
+			"createdAt": "10.06.2023"
+		},
+		{
+			"id": 6,
+			"img": "https://images.pexels.com/photos/769745/pexels-photo-769745.jpeg?auto=compress&cs=tinysrgb&w=1600",
+			"lastName": "Sharp",
+			"firstName": "Jeremy",
+			"email": "vulca.eder@mail.com",
+			"phone": "735 523 563",
+			"createdAt": "11.05.2023",
+			"verified": true
+		},
+		{
+			"id": 7,
+			"img": "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1600",
+			"lastName": "Lowe",
+			"firstName": "Christina",
+			"email": "reso.bilic@gmail.com",
+			"phone": "235 734 574",
+			"createdAt": "04.05.2023"
+		}
+	]
+}

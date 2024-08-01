@@ -1,0 +1,22 @@
+{
+    "MicroPython.executeButton": [
+        {
+            "text": "▶",
+            "tooltip": "Run",
+            "alignment": "left",
+            "command": "extension.executeFile",
+            "priority": 3.5
+        }
+    ],
+    "MicroPython.syncButton": [
+        {
+            "text": "$(sync)",
+            "tooltip": "sync",
+            "alignment": "left",
+            "command": "extension.execute",
+            "priority": 4
+        }
+    ],
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/3b3378be-db36-4e8c-9442-9805b68ce3c1/resourceGroups/RG-DPRHUB-SERVER/providers/Microsoft.Web/sites/dprhubserver",
+    "appService.deploySubpath": "."
+}

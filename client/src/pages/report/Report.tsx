@@ -4,14 +4,12 @@ import * as Yup from "yup";
 import "./report.scss";
 
 const Report = () => {
-	// useFormik hook sets up the form state and provides helpful functions
 	const formik = useFormik({
 		initialValues: {
 			username: "",
 			email: "",
 			password: "",
 		},
-		// Validation rules defined using Yup
 		validationSchema: Yup.object().shape({
 			username: Yup.string()
 				.required("Username is required")
@@ -22,10 +20,21 @@ const Report = () => {
 				.required("Email is required"),
 			password: Yup.string().required("Password is required"),
 		}),
-		// onSubmit is called when the form is submitted
-		onSubmit: (values) => {
-			// Handle form submission logic here (e.g., send data to server)
-			console.log(values);
+		onSubmit: async (values) => {
+			// Post data to the server
+			try {
+				const response = await fetch("http://localhost:8800/api/reports", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(values),
+				});
+				const data = await response.json();
+				console.log(data); // Log or handle the response data
+			} catch (error) {
+				console.error("Failed to submit report:", error);
+			}
 		},
 	});
 
@@ -41,12 +50,10 @@ const Report = () => {
 							id="username"
 							name="username"
 							placeholder="Enter your username"
-							// Connect input to formik state and handlers
 							onChange={formik.handleChange}
 							onBlur={formik.handleBlur}
 							value={formik.values.username}
 						/>
-						{/* Show error message if touched and there is an error */}
 						{formik.touched.username && formik.errors.username && (
 							<div style={{ color: "red", marginTop: "5px" }}>
 								{formik.errors.username}

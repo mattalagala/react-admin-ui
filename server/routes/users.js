@@ -30,13 +30,16 @@ function writeUsersToFile(users, callback) {
 }
 
 // GET all users
-router.get("/", (req, res) => {
-	readUsersFromFile((err, users) => {
-		if (err) {
-			return res.status(500).send("Failed to read users data");
-		}
-		res.json(users);
-	});
+router.get("/api/users", async function (req, res, next) {
+	try {
+		const result = await pool.query(
+			'SELECT user_id, first_name, email, "password", created_at FROM public.users'
+		);
+		res.send(result.rows);
+	} catch (err) {
+		console.error(err);
+		res.status(500).send("Database error");
+	}
 });
 
 // GET single user by ID

@@ -1,6 +1,10 @@
 @import "../../styles/variables.scss";
 @import "../../styles/responsive.scss";
 
+.info {
+	padding: 10px;
+}
+
 .report {
 	display: grid;
 	gap: 20px;
@@ -29,12 +33,12 @@
 
 	.box1 {
 		grid-column: span 1;
-		grid-row: span 3;
+		grid-row: span 2;
 	}
 
 	.box4 {
 		grid-column: span 1;
-		grid-row: span 3;
+		grid-row: span 2;
 	}
 	.box7 {
 		grid-column: span 2;

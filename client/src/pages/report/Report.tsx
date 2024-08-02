@@ -1,105 +1,78 @@
-import { useFormik } from "formik";
-import * as Yup from "yup";
-
 import "./report.scss";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import Button from "@mui/material/Button";
+import FormikField from "../../components/formikField/FormikField";
+import { FieldConfig } from "../../components/formikField/FormikField";
+
+interface FormValues {
+	email: string;
+	password: string;
+}
+
+const fields: FieldConfig[] = [
+	{
+		name: "field",
+		label: "Field",
+		type: "text",
+		validation: yup.string(),
+		//.required("Email is required"),
+	},
+	{
+		name: "block",
+		label: "Block",
+		type: "text",
+		validation: yup.string().min(8, "Field length should be min 8 chars"),
+	},
+	{
+		name: "platform",
+		label: "Platform",
+		type: "text",
+		validation: yup.string().min(8, "Field length should be min 8 chars"),
+	},
+	{
+		name: "vessel",
+		label: "Vessel",
+		type: "text",
+		validation: yup.string().min(8, "Field length should be min 8 chars"),
+	},
+];
+
+const validationSchema = yup.object(
+	fields.reduce(
+		(schema, field) => ({
+			...schema,
+			[field.name]: field.validation,
+		}),
+		{}
+	)
+);
 
 const Report = () => {
-	const formik = useFormik({
-		initialValues: {
-			username: "",
-			email: "",
-			password: "",
-		},
-		validationSchema: Yup.object().shape({
-			username: Yup.string()
-				.required("Username is required")
-				.min(3, "Username must be at least 3 characters")
-				.max(15, "Username must be at most 15 characters"),
-			email: Yup.string()
-				.email("Invalid email address")
-				.required("Email is required"),
-			password: Yup.string().required("Password is required"),
-		}),
-		onSubmit: async (values) => {
-			// Post data to the server
-			try {
-				const response = await fetch("http://localhost:8800/api/reports", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(values),
-				});
-				const data = await response.json();
-				console.log(data); // Log or handle the response data
-			} catch (error) {
-				console.error("Failed to submit report:", error);
-			}
+	const formik = useFormik<FormValues>({
+		initialValues: fields.reduce(
+			(vals, field) => ({ ...vals, [field.name]: "" }),
+			{} as FormValues
+		),
+		validationSchema: validationSchema,
+		onSubmit: (values) => {
+			alert(JSON.stringify(values, null, 2));
 		},
 	});
 
 	return (
-		<div className="info">
-			<h1>Add New Report</h1>
-			<div className="box">
-				<form onSubmit={formik.handleSubmit}>
-					<div>
-						<label htmlFor="username">Username:</label>
-						<input
-							type="text"
-							id="username"
-							name="username"
-							placeholder="Enter your username"
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-							value={formik.values.username}
-						/>
-						{formik.touched.username && formik.errors.username && (
-							<div style={{ color: "red", marginTop: "5px" }}>
-								{formik.errors.username}
-							</div>
-						)}
-					</div>
-
-					<div>
-						<label htmlFor="email">Email:</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							placeholder="Enter your email"
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-							value={formik.values.email}
-						/>
-						{formik.touched.email && formik.errors.email && (
-							<div style={{ color: "red", marginTop: "5px" }}>
-								{formik.errors.email}
-							</div>
-						)}
-					</div>
-
-					<div>
-						<label htmlFor="password">Password:</label>
-						<input
-							type="password"
-							id="password"
-							name="password"
-							placeholder="Enter your password"
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-							value={formik.values.password}
-						/>
-						{formik.touched.password && formik.errors.password && (
-							<div style={{ color: "red", marginTop: "5px" }}>
-								{formik.errors.password}
-							</div>
-						)}
-					</div>
-
-					<button type="submit">Submit</button>
-				</form>
-			</div>
+		<div className="report">
+			<form className="box" onSubmit={formik.handleSubmit}>
+				<div className="info">
+					<h3>General</h3>
+				</div>
+				{fields.map((field) => (
+					<FormikField key={field.name} field={field} formik={formik} />
+				))}
+				<Button color="primary" variant="contained" fullWidth type="submit">
+					Submit
+				</Button>
+			</form>
 		</div>
 	);
 };

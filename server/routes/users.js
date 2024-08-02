@@ -30,12 +30,11 @@ function writeUsersToFile(users, callback) {
 }
 
 // GET all users
-router.get("/api/users", (req, res) => {
+router.get("/", (req, res) => {
 	readUsersFromFile((err, users) => {
 		if (err) {
 			return res.status(500).send("Failed to read users data");
 		}
-		var users = readUsersFromFile();
 		res.json(users);
 	});
 });

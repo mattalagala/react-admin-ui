@@ -3,6 +3,9 @@ var router = express.Router();
 var fs = require("fs");
 var path = require("path");
 
+const pool = require("../data/dbconfig.js");
+console.log("POOL: ", pool.options);
+
 const usersFilePath = path.join(__dirname, "../data/users.json");
 
 console.log("usersFilePath: ", usersFilePath);
@@ -30,11 +33,10 @@ function writeUsersToFile(users, callback) {
 }
 
 // GET all users
-router.get("/api/users", async function (req, res, next) {
+router.get("/", async function (req, res, next) {
 	try {
-		const result = await pool.query(
-			'SELECT user_id, first_name, email, "password", created_at FROM public.users'
-		);
+		const result = await pool.query("SELECT * FROM public.users");
+		console.log(typeof result.rows);
 		res.send(result.rows);
 	} catch (err) {
 		console.error(err);
